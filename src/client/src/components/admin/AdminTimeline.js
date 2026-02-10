@@ -199,4 +199,5 @@ const AdminTimeline = () => {
     </div>
   );
 };
-
+
+export default AdminTimeline;
