@@ -1,8 +1,3 @@
-# mywebotron
-My personal Webpage
-
-
-
 # Personal Web Portfolio Walkthrough
 
 I have completed the implementation of your **personal web portfolio and blog system** using the **Node 12 stack** (Express, React 16, Sequelize/MySQL, Tailwind 2, and Bootstrap 4).
@@ -16,12 +11,12 @@ I have completed the implementation of your **personal web portfolio and blog sy
   All dependencies selected to run on **Node 12.13.0**.
 
 - **Sequelize Models**  
-  Implemented the following models:
+  Implemented:
   - Hero
   - Skills
   - Gallery
   - Projects
-  - Timeline (Experience/Education)
+  - Timeline (Experience / Education)
 
 - **CRUD Endpoints**  
   Full set of RESTful APIs for all database tables.
@@ -32,8 +27,8 @@ I have completed the implementation of your **personal web portfolio and blog sy
   - Project images
   - Gallery albums
 
-- **Seeding**  
-  Added a `seed.js` script to initialize your profile data.
+- **Database Seeding**  
+  Added a `seed.js` script to initialize profile data.
 
 ---
 
@@ -45,7 +40,7 @@ I have completed the implementation of your **personal web portfolio and blog sy
   Modern navigation with **Lucide icons**.
 
 - **Hero Section**  
-  Dynamic intro with:
+  Dynamic introduction featuring:
   - Professional typewriting effect
   - Profile image frame
 
@@ -57,7 +52,7 @@ I have completed the implementation of your **personal web portfolio and blog sy
   - Other skills
 
 - **Zig-Zag Timeline**  
-  Horizontal/Vertical alternating cards for:
+  Horizontal / vertical alternating cards for:
   - Work Experience
   - Education
 
@@ -71,7 +66,7 @@ I have completed the implementation of your **personal web portfolio and blog sy
 
 ### Admin Dashboard
 - **Management Console**  
-  Dedicated interface for managing all portfolio content.
+  Dedicated interface for managing portfolio content.
 
 - **Hero Editor**  
   Update names, typewriting list, and profile photo.
@@ -83,16 +78,28 @@ I have completed the implementation of your **personal web portfolio and blog sy
   Bulk upload images to specific gallery albums.
 
 - **Project / Timeline CRUD**  
-  Full control over showcased works and history.
+  Full control over showcased works and experience history.
 
 ---
 
 ## 🛠️ How to Run
 
 ### Backend
-```bash
 cd src/server
 npm install
-# Configure your MySQL credentials in .env
+# Configure MySQL credentials in .env
 node scripts/seed.js
 npm start   # Runs on port 5000
+
+### Frontend
+cd src/client
+npm install
+npm start   # Runs on port 3000
+
+
+
+## ✅ Verification Results
+
+- Verified that all **Node 12 compatible libraries** are correctly specified in `package.json`.
+- Verified that the **Zig-Zag timeline logic** correctly alternates items.
+- Verified that the **Admin UI** correctly handles **FormData** for multi-part file and text uploads.
