@@ -4,70 +4,116 @@
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@300;400;700&family=Outfit:wght@300;400;700&display=swap');
+
+:root {
+  --gaming-neon: #00f3ff;
+  --gaming-danger: #ff0055;
+  --gaming-success: #39ff14;
+  --gaming-obsidian: #0d0d0d;
+  --gaming-accent: #bc13fe;
+}
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-system-font-smoothing: grayscale;
   background-color: #050505;
   color: #e0e0e0;
   background-image: 
-    linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, .font-tech {
   font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
 }
 
+/* Glassmorphism / HUD Panels */
 .glass-morphism {
-  background: rgba(13, 13, 13, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 243, 255, 0.1);
+  background: rgba(13, 13, 13, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 243, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 }
 
-.neon-border {
-  border: 1px solid #00f3ff;
-  box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-}
-
-.neon-text {
-  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
-}
-
-.scanline {
+.hud-panel {
   position: relative;
-  overflow: hidden;
+  background: rgba(13, 13, 13, 0.9);
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  clip-path: polygon(
+    0% 10px, 10px 0%, 
+    calc(100% - 10px) 0%, 100% 10px, 
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 
+    10px 100%, 0% calc(100% - 10px)
+  );
 }
 
-.scanline::after {
+.hud-panel::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.25) 50%
-  ),
-  linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 0.06),
-    rgba(0, 255, 0, 0.02),
-    rgba(0, 0, 255, 0.06)
-  );
-  background-size: 100% 4px, 3px 100%;
+  background: linear-gradient(135deg, rgba(0, 243, 255, 0.05) 0%, transparent 100%);
   pointer-events: none;
+}
+
+/* Animations */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  animation-play-state: paused;
+}
+
+.animate-glitch:hover {
+  animation-play-state: running;
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100%); }
+}
+
+.scan-line-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gaming-neon);
+  opacity: 0.5;
+  box-shadow: 0 0 15px var(--gaming-neon);
+  animation: scan 3s linear infinite;
+  z-index: 20;
+}
+
+.neon-border {
+  border: 1px solid var(--gaming-neon);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.3), inset 0 0 15px rgba(0, 243, 255, 0.1);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.6), 0 0 20px rgba(0, 243, 255, 0.2);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -75,10 +121,12 @@ h1, h2, h3, .font-tech {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00f3ff;
-  border-radius: 10px;
+  background: var(--gaming-neon);
+  box-shadow: 0 0 10px var(--gaming-neon);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #39ff14;
-}
+/* Utility classes for HUD colors from plan */
+.text-gaming-neon { color: var(--gaming-neon); }
+.bg-gaming-neon { background-color: var(--gaming-neon); }
+.border-gaming-neon { border-color: var(--gaming-neon); }
+.bg-gaming-obsidian { background-color: var(--gaming-obsidian); }
