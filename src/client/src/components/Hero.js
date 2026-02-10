@@ -52,7 +52,7 @@ const Hero = ({ data }) => {
           <div className="absolute inset-0 border-2 border-portfolio-tech translate-x-4 translate-y-4 rounded-lg -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
           <div className="w-full h-full bg-portfolio-blue rounded-lg overflow-hidden border border-portfolio-tech/30 shadow-2xl shadow-portfolio-tech/10">
             <img
-              src={data && data.profile_image ? `http://localhost:5000${data.profile_image}` : 'https://via.placeholder.com/320x384/0a192f/64ffda?text=User+Image'}
+              src={data && data.profile_image ? `http://localhost:5000${data.profile_image}` : 'https://placehold.co/320x384/0a192f/64ffda?text=User+Image'}
               alt="Profile"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />

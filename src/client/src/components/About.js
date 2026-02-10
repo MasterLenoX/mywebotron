@@ -28,7 +28,7 @@ const About = ({ data }) => {
 
         <div>
           <a
-            href="#"
+            href="#!"
             className="inline-flex items-center space-x-2 px-6 py-3 bg-transparent border border-portfolio-tech text-portfolio-tech font-bold rounded hover:bg-portfolio-tech/10 transition-all"
             download
           >

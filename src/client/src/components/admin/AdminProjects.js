@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaPlus, FaTrashAlt, FaEdit, FaSave, FaUpload } from 'react-icons/fa/index';
+import { FaTrashAlt, FaEdit, FaSave, FaUpload } from 'react-icons/fa/index';
 
 const AdminProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -156,7 +156,7 @@ const AdminProjects = () => {
         {projects.map(p => (
           <div key={p.id} className="bg-portfolio-blue rounded-xl overflow-hidden border border-gray-800 group relative">
             <img
-              src={p.image_path ? `http://localhost:5000${p.image_path}` : 'https://via.placeholder.com/400x200'}
+              src={p.image_path ? `http://localhost:5000${p.image_path}` : 'https://placehold.co/400x200'}
               alt={p.title}
               className="w-full h-32 object-cover"
             />

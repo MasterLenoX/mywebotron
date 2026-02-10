@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaPlus, FaTrashAlt, FaSave } from 'react-icons/fa/index';
+import { FaPlus, FaTrashAlt } from 'react-icons/fa/index';
 
 const AdminSkills = () => {
   const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState({ category: 'Frontend', name: '', meta: '' });
-  const [loading, setLoading] = useState(false);
+
 
   const categories = ['Frontend', 'Backend', 'Games', 'Other', 'Position Expertise'];
 

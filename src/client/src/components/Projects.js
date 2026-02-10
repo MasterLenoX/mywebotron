@@ -5,13 +5,13 @@ const ProjectCard = ({ project }) => (
   <div className="bg-portfolio-blue rounded-xl overflow-hidden border border-transparent hover:border-portfolio-tech/30 transition-all group">
     <div className="h-48 overflow-hidden relative">
       <img
-        src={project.image_path ? `http://localhost:5000${project.image_path}` : 'https://via.placeholder.com/400x200/112240/64ffda?text=Project+Preview'}
+        src={project.image_path ? `http://localhost:5000${project.image_path}` : 'https://placehold.co/400x200/112240/64ffda?text=Project+Preview'}
         alt={project.title}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
       <div className="absolute inset-0 bg-portfolio-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
-        <a href="#" className="p-2 bg-portfolio-tech text-black rounded-full hover:bg-white transition-colors"><FaGithub size={20} /></a>
-        <a href="#" className="p-2 bg-portfolio-tech text-black rounded-full hover:bg-white transition-colors"><FaExternalLinkAlt size={18} /></a>
+        <a href="#!" className="p-2 bg-portfolio-tech text-black rounded-full hover:bg-white transition-colors"><FaGithub size={20} /></a>
+        <a href="#!" className="p-2 bg-portfolio-tech text-black rounded-full hover:bg-white transition-colors"><FaExternalLinkAlt size={18} /></a>
       </div>
     </div>
     <div className="p-6 space-y-4">

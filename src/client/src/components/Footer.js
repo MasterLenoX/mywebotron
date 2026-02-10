@@ -7,9 +7,9 @@ const Footer = () => {
         Designed & Built by <span className="text-portfolio-tech">Leonard James Emperado</span>
       </p>
       <div className="flex justify-center space-x-6 text-gray-500">
-        <a href="#" className="hover:text-portfolio-tech transition-colors text-xs uppercase tracking-widest font-bold">GitHub</a>
-        <a href="#" className="hover:text-portfolio-tech transition-colors text-xs uppercase tracking-widest font-bold">LinkedIn</a>
-        <a href="#" className="hover:text-portfolio-tech transition-colors text-xs uppercase tracking-widest font-bold">Instagram</a>
+        <a href="#!" className="hover:text-portfolio-tech transition-colors text-xs uppercase tracking-widest font-bold">GitHub</a>
+        <a href="#!" className="hover:text-portfolio-tech transition-colors text-xs uppercase tracking-widest font-bold">LinkedIn</a>
+        <a href="#!" className="hover:text-portfolio-tech transition-colors text-xs uppercase tracking-widest font-bold">Instagram</a>
       </div>
       <p className="text-[10px] text-gray-600 uppercase tracking-[0.2em] pt-4">
         &copy; {new Date().getFullYear()} All Rights Reserved

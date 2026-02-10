@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaPlus, FaTrashAlt, FaEdit, FaSave, FaUpload, FaCalendarAlt } from 'react-icons/fa/index';
+import { FaTrashAlt, FaEdit, FaSave, FaCalendarAlt } from 'react-icons/fa/index';
 
 const AdminTimeline = () => {
   const [timeline, setTimeline] = useState([]);
