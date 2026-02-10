@@ -2,73 +2,74 @@ import React from 'react';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaGithub, FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 const ContactItem = ({ icon, text, label }) => (
-  <div className="flex items-center space-x-4">
-    <div className="w-10 h-10 bg-portfolio-blue rounded-lg flex items-center justify-center text-portfolio-tech shrink-0">
+  <div className="flex items-center space-x-6 group">
+    <div className="w-12 h-12 glass-morphism border border-gaming-neon/20 rounded-none flex items-center justify-center text-gaming-neon shrink-0 group-hover:border-gaming-neon transition-all neon-border">
       {icon}
     </div>
     <div>
-      <p className="text-xs text-gray-500 uppercase font-bold">{label}</p>
-      <p className="text-white">{text}</p>
+      <p className="text-[10px] text-gaming-neon uppercase font-bold tracking-[0.2em] font-tech opacity-60">{label}</p>
+      <p className="text-white font-tech uppercase tracking-wide text-sm">{text}</p>
     </div>
   </div>
 );
 
 const Contact = () => {
   return (
-    <div className="space-y-12">
-      <div className="flex items-center space-x-4">
-        <h2 className="text-4xl font-bold border-b-4 border-portfolio-tech pb-2">Get In Touch</h2>
-        <div className="h-px bg-gray-800 flex-1"></div>
+    <div className="space-y-16">
+      <div className="flex items-center space-x-6">
+        <div className="w-2 h-10 bg-gaming-neon"></div>
+        <h2 className="text-5xl font-bold uppercase tracking-tighter text-white font-tech">Signal <span className="text-gaming-neon font-light">// Channel</span></h2>
+        <div className="h-px bg-gaming-neon/20 flex-1"></div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div className="space-y-8">
-          <p className="text-gray-400 text-lg leading-relaxed">
-            I'm currently looking for new opportunities. My inbox is always open!
-            Whether you have a question or just want to say hi, I'll try my best to get back to you.
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="space-y-10">
+          <p className="text-gray-400 text-lg leading-relaxed font-light border-l-2 border-gaming-neon/20 pl-8">
+            Established secure communication channel for professional inquiries.
+            Initiating contact will result in high-priority processing of your request.
           </p>
 
-          <div className="space-y-6">
-            <ContactItem icon={<FaEnvelope size={20} />} label="Email" text="leo.emperado@example.com" />
-            <ContactItem icon={<FaPhoneAlt size={18} />} label="Phone" text="+63 912 345 6789" />
-            <ContactItem icon={<FaMapMarkerAlt size={20} />} label="Location" text="Manila, Philippines" />
+          <div className="space-y-8">
+            <ContactItem icon={<FaEnvelope size={18} />} label="Data Stream" text="leo.emperado@example.com" />
+            <ContactItem icon={<FaPhoneAlt size={16} />} label="Voice Link" text="+63 912 345 6789" />
+            <ContactItem icon={<FaMapMarkerAlt size={18} />} label="Base Ops" text="Manila, Philippines" />
           </div>
 
-          <div className="flex space-x-4 pt-4">
+          <div className="flex space-x-4 pt-6">
             {[
-              { icon: <FaGithub size={24} />, link: '#' },
-              { icon: <FaLinkedin size={24} />, link: '#' },
-              { icon: <FaInstagram size={24} />, link: '#' },
-              { icon: <FaFacebook size={24} />, link: '#' }
+              { icon: <FaGithub size={20} />, link: '#' },
+              { icon: <FaLinkedin size={20} />, link: '#' },
+              { icon: <FaInstagram size={20} />, link: '#' },
+              { icon: <FaFacebook size={20} />, link: '#' }
             ].map((social, i) => (
-              <a key={i} href={social.link} className="w-12 h-12 rounded-full border border-gray-800 flex items-center justify-center text-gray-400 hover:text-portfolio-tech hover:border-portfolio-tech transition-all">
+              <a key={i} href={social.link} className="w-12 h-12 rounded-none border border-gaming-neon/20 flex items-center justify-center text-gray-400 hover:text-gaming-neon hover:border-gaming-neon hover:bg-gaming-neon/5 transition-all">
                 {social.icon}
               </a>
             ))}
           </div>
         </div>
 
-        <form className="bg-portfolio-navy p-8 rounded-xl border border-portfolio-blue space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-gray-400 uppercase">Name</label>
-              <input type="text" className="w-full bg-portfolio-blue border border-gray-800 rounded px-4 py-3 focus:border-portfolio-tech outline-none transition-all" placeholder="John Doe" />
+        <form className="glass-morphism p-10 rounded-none border border-gaming-neon/20 space-y-8 relative scanline">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold text-gaming-neon uppercase tracking-[0.2em] font-tech">User Name</label>
+              <input type="text" className="w-full bg-gaming-obsidian/40 border border-gaming-neon/10 rounded-none px-4 py-4 focus:border-gaming-neon text-white font-tech outline-none transition-all" placeholder="IDENTIFY..." />
             </div>
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-gray-400 uppercase">Email</label>
-              <input type="email" className="w-full bg-portfolio-blue border border-gray-800 rounded px-4 py-3 focus:border-portfolio-tech outline-none transition-all" placeholder="john@example.com" />
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold text-gaming-neon uppercase tracking-[0.2em] font-tech">Comm Link</label>
+              <input type="email" className="w-full bg-gaming-obsidian/40 border border-gaming-neon/10 rounded-none px-4 py-4 focus:border-gaming-neon text-white font-tech outline-none transition-all" placeholder="EMAIL@ADDR.SYS" />
             </div>
           </div>
-          <div className="space-y-2">
-            <label className="text-sm font-bold text-gray-400 uppercase">Subject</label>
-            <input type="text" className="w-full bg-portfolio-blue border border-gray-800 rounded px-4 py-3 focus:border-portfolio-tech outline-none transition-all" placeholder="Hello!" />
+          <div className="space-y-3">
+            <label className="text-[10px] font-bold text-gaming-neon uppercase tracking-[0.2em] font-tech">Mission Subject</label>
+            <input type="text" className="w-full bg-gaming-obsidian/40 border border-gaming-neon/10 rounded-none px-4 py-4 focus:border-gaming-neon text-white font-tech outline-none transition-all" placeholder="ENTRY POINT..." />
           </div>
-          <div className="space-y-2">
-            <label className="text-sm font-bold text-gray-400 uppercase">Message</label>
-            <textarea rows="4" className="w-full bg-portfolio-blue border border-gray-800 rounded px-4 py-3 focus:border-portfolio-tech outline-none transition-all resize-none" placeholder="Your message here..."></textarea>
+          <div className="space-y-3">
+            <label className="text-[10px] font-bold text-gaming-neon uppercase tracking-[0.2em] font-tech">Encrypted Message</label>
+            <textarea rows="4" className="w-full bg-gaming-obsidian/40 border border-gaming-neon/10 rounded-none px-4 py-4 focus:border-gaming-neon text-white font-tech outline-none transition-all resize-none" placeholder="TRANSMIT DATA..."></textarea>
           </div>
-          <button type="submit" className="w-full py-4 bg-portfolio-tech text-black font-bold rounded hover:bg-opacity-80 transition-all">
-            Send Message
+          <button type="submit" className="w-full py-5 bg-gaming-neon text-black font-tech font-bold uppercase tracking-[0.3em] rounded-none hover:bg-white transition-all neon-border">
+            Initiate Transfer
           </button>
         </form>
       </div>

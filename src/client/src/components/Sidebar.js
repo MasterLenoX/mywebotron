@@ -14,11 +14,12 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-full w-64 bg-portfolio-navy border-r border-portfolio-blue flex flex-col items-center py-8 z-50">
+    <div className="fixed left-0 top-0 h-full w-64 glass-morphism border-r border-gaming-neon/20 flex flex-col items-center py-8 z-50">
       <div className="mb-12">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-portfolio-tech to-portfolio-blue bg-clip-text text-transparent italic">
-          LEO.DEV
+        <h1 className="text-3xl font-bold tracking-tighter text-white font-tech italic">
+          <span className="text-gaming-neon">LEO</span>.DEV
         </h1>
+        <div className="h-1 w-12 bg-gaming-neon mt-1 mx-auto rounded-full"></div>
       </div>
 
       <nav className="flex-1 w-full px-4">
@@ -27,10 +28,10 @@ const Sidebar = () => {
             <li key={item.name}>
               <Link
                 to={item.path}
-                className="flex items-center space-x-4 px-4 py-3 rounded-lg text-gray-400 hover:text-portfolio-tech hover:bg-portfolio-blue transition-all duration-300"
+                className="flex items-center space-x-4 px-4 py-3 rounded-lg text-gray-400 hover:text-gaming-neon hover:bg-gaming-neon/10 transition-all duration-300 border border-transparent hover:border-gaming-neon/20 group"
               >
-                {item.icon}
-                <span className="font-medium">{item.name}</span>
+                <span className="group-hover:scale-110 transition-transform">{item.icon}</span>
+                <span className="font-tech tracking-wide uppercase text-sm">{item.name}</span>
               </Link>
             </li>
           ))}
@@ -38,11 +39,11 @@ const Sidebar = () => {
       </nav>
 
       <div className="mt-auto px-4 w-full">
-        <div className="p-4 bg-portfolio-blue rounded-xl border border-portfolio-tech/20">
-          <p className="text-xs text-portfolio-tech uppercase font-bold mb-1">Status</p>
+        <div className="p-4 bg-gaming-obsidian/50 rounded-xl border border-gaming-neon/20 glass-morphism">
+          <p className="text-[10px] text-gaming-neon uppercase font-bold mb-1 tracking-widest font-tech">System Status</p>
           <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-xs text-gray-300">Available for Work</span>
+            <div className="w-2 h-2 bg-gaming-neon rounded-full animate-ping"></div>
+            <span className="text-xs text-white/80 font-mono">ONLINE // READY</span>
           </div>
         </div>
       </div>
