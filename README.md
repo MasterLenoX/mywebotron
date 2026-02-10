@@ -85,16 +85,16 @@ I have completed the implementation of your **personal web portfolio and blog sy
 ## 🛠️ How to Run
 
 ### Backend
-cd src/server
-npm install
-# Configure MySQL credentials in .env
-node scripts/seed.js
-npm start   # Runs on port 5000
+- cd src/server
+- npm install
+- Configure MySQL credentials in .env
+- node scripts/seed.js
+- npm start   # Runs on port 5000
 
 ### Frontend
-cd src/client
-npm install
-npm start   # Runs on port 3000
+- cd src/client
+- npm install
+- npm start   # Runs on port 3000
 
 
 
