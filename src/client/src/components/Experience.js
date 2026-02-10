@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaBriefcase, FaGraduationCap } from 'react-icons/fa/index';
 
 const TimelineItem = ({ item, index }) => {
   const isEven = index % 2 === 0;

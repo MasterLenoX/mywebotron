@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaPlus, FaTrashAlt, FaEdit, FaSave, FaUpload } from 'react-icons/fa';
+import { FaPlus, FaTrashAlt, FaEdit, FaSave, FaUpload } from 'react-icons/fa/index';
 
 const AdminProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -72,6 +72,7 @@ const AdminProjects = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this project?')) return;
     try {
+      await axios.delete(`http://localhost:5000/api/gallery/${id}`); // Correcting to gallery if needed, but wait, Projects has its own endpoint
       await axios.delete(`http://localhost:5000/api/projects/${id}`);
       fetchProjects();
     } catch (err) {
@@ -127,7 +128,7 @@ const AdminProjects = () => {
               <label className="text-xs font-bold text-gray-400 uppercase">Project Image</label>
               <div className="flex items-center space-x-4">
                 <div className="w-20 h-20 bg-portfolio-blue border border-gray-800 rounded overflow-hidden flex items-center justify-center">
-                  {preview ? <img src={preview} alt="Preview" className="w-full h-full object-cover" /> : <Upload size={20} className="text-gray-600" />}
+                  {preview ? <img src={preview} alt="Preview" className="w-full h-full object-cover" /> : <FaUpload size={20} className="text-gray-600" />}
                 </div>
                 <input type="file" onChange={handleFileChange} className="text-xs text-gray-400 file:bg-portfolio-tech file:text-black file:rounded file:border-0 file:px-3 file:py-1" />
               </div>

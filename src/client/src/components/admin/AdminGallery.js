@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FaPlus, FaTrashAlt, FaUpload, FaFolderPlus } from 'react-icons/fa';
+import { FaPlus, FaTrashAlt, FaUpload, FaFolderPlus } from 'react-icons/fa/index';
 
 const AdminGallery = () => {
   const [images, setImages] = useState([]);

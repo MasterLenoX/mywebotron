@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa/index';
 
 const ProjectCard = ({ project }) => (
   <div className="bg-portfolio-blue rounded-xl overflow-hidden border border-transparent hover:border-portfolio-tech/30 transition-all group">

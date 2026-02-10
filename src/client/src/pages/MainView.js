@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
 import Experience from '../components/Experience';

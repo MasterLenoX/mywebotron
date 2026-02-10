@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaUser, FaBriefcase, FaEnvelope, FaImage, FaLayerGroup, FaCog } from 'react-icons/fa';
+import { FaHome, FaUser, FaBriefcase, FaEnvelope, FaImage, FaLayerGroup, FaCog } from 'react-icons/fa/index';
 
 const Sidebar = () => {
   const navItems = [
